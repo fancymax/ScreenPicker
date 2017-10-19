@@ -48,7 +48,7 @@
         return;
     }
     
-    CGFloat captureSize = self.frame.size.width / 7;
+    CGFloat captureSize = self.frame.size.width / 4;
     NSRect screenFrame = [[NSScreen mainScreen] frame];
     CGFloat x = floor(point.x) - floor(captureSize / 2);
     CGFloat y = screenFrame.size.height - floor(point.y) - floor(captureSize / 2);
@@ -59,7 +59,7 @@
         CGImageRelease(imageRef);
         imageRef = NULL;
     }
-    imageRef = CGWindowListCreateImage(CGRectMake(x, y, captureSize, captureSize), kCGWindowListOptionOnScreenBelowWindow, windowID, kCGWindowImageNominalResolution);
+    imageRef = CGWindowListCreateImage(CGRectMake(x, y, captureSize, captureSize), kCGWindowListOptionOnScreenBelowWindow, windowID, kCGWindowImageBestResolution);
         
     NSImage *image = [[NSImage alloc] initWithCGImage:imageRef size:NSZeroSize];
     

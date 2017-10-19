@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    screenPickerWindow = [[ScreenPickerWindow alloc] initWithContentRect:NSMakeRect(0, 0, 63, 63) styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES];
+    screenPickerWindow = [[ScreenPickerWindow alloc] initWithContentRect:NSMakeRect(0, 0, 126, 126) styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES];
     screenPickerWindow.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidBecomeKey:) name:NSWindowDidBecomeKeyNotification object:screenPickerWindow];
